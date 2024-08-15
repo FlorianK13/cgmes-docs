@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CGMES Documentation</title>
+    
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+        }
+        h1 {
+            text-align: center;
+        }
+        ul {
+            list-style-type: none;
+            padding: 0;
+        }
+        li {
+            margin: 5px 0;
+        }
+        a {
+            text-decoration: none;
+            color: #007BFF;
+        }
+        a:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+
+<h1>CGMES Documentation</h1>
+<p>
+    Entso-e provides html files for documenting the CGMES. 
+    They are available at <a href="https://www.entsoe.eu/digital/common-information-model/">https://www.entsoe.eu/digital/common-information-model/</a>. 
+    This repo hosts these html files using github pages.
+</p>
+<ul id="file-list">
+</ul>
+
+<script>
+    const folderPath = 'CGMESv2.4.15'; 
+    const fileList = document.getElementById('file-list');
+
+    const files = [
+        'DiagramLayoutProfile-v2_4_15-7Aug2014.html',
+        'DynamicsProfile-v2_4_15-7Aug2014.html',
+        'EquipmentBoundaryProfile-v2_4_15-7Aug2014.html',
+        'EquipmentProfile-v2_4_15-7Aug2014.html',
+        'GeographicalLocationProfile-v2_4_15-7Aug2014.html',
+        'StateVariablesProfile-v2_4_15-7Aug2014.html',
+        'SteadyStateHypothesisProfile-v2_4_15-7Aug2014.html',
+        'TopologyBoundaryProfile-v2_4_15-7Aug2014.html',
+        'TopologyProfile-v2_4_15-7Aug2014.html',
+    ];
+
+    files.forEach(file => {
+        const listItem = document.createElement('li');
+        const link = document.createElement('a');
+        link.href = `${folderPath}/${file}`;
+        link.textContent = file;
+        listItem.appendChild(link);
+        fileList.appendChild(listItem);
+    });
+</script>
+
+</body>
+</html>
